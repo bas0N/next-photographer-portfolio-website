@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
+import { contentfulClient } from "../../config/contentful";
 const sliderData = [
   {
     url: "https://images.unsplash.com/photo-1515238152791-8216bfdf89a7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2072&q=80",
@@ -11,10 +12,10 @@ const sliderData = [
     url: "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
   },
 ];
-function Carousel() {
+function Carousel({ photos }) {
   const [currentSlide, setCurrentSlide] = useState(0);
   console.log(currentSlide);
-  const length = sliderData.length;
+  const length = photos.length;
   const prevSlide = () => {
     setCurrentSlide(currentSlide === length - 1 ? 0 : currentSlide + 1);
   };
@@ -32,10 +33,10 @@ function Carousel() {
           onClick={nextSlide}
           className="absolute top-[50%] text-white cursor-pointer text-3xl right-8"
         />
-        {sliderData.map((item, index) => (
+        {photos.map((item, index) => (
           <div className={index === currentSlide ? "opacity-100" : "opacity-0"}>
             {index === currentSlide && (
-              <img className="w-full" src={item.url} alt="/" />
+              <img className="w-full" src={item.fields.file.url} alt="/" />
             )}
           </div>
         ))}
