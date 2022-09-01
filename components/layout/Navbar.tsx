@@ -16,7 +16,7 @@ function Navbar() {
   };
   console.log(router.pathname);
   return (
-    <div className=" flex justify-between ">
+    <nav className=" flex justify-between ">
       <div
         className={`flex flex-row justify-between w-full items-center px-4 h-20 absolute  ${
           router.pathname === "/"
@@ -85,7 +85,7 @@ function Navbar() {
           </div>
         </ul>
       </div>
-    </div>
+    </nav>
   );
 }
 
