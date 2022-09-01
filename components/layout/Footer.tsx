@@ -36,7 +36,7 @@ function Footer() {
               <Link href="/stories">
                 <li>HISTORIE</li>
               </Link>
-              <Link href="/offer">
+              <Link href="/contact">
                 <li>KONTAKT</li>
               </Link>
               <Link href="/about">

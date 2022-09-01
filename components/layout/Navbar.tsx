@@ -36,8 +36,8 @@ function Navbar() {
           <Link href="/stories">
             <li>HISTORIE</li>
           </Link>
-          <Link href="/offer">
-            <li>OFERTA</li>
+          <Link href="/contact">
+            <li>KONTAKT</li>
           </Link>
           <Link href="/about">
             <li>O MNIE</li>
@@ -68,8 +68,8 @@ function Navbar() {
           <Link href="/stories">
             <li className="border-b">HISTORIE</li>
           </Link>
-          <Link href="/offer">
-            <li className="border-b">OFERTA</li>
+          <Link href="/contact">
+            <li className="border-b">KONTAKT</li>
           </Link>
           <Link href="/about">
             <li className="border-b">O MNIE</li>
