@@ -1,6 +1,8 @@
 import { Head } from "next/document";
 import Link from "next/link";
 import React from "react";
+import Carousel from "../components/LandingPage/Carousel";
+import LandingStories from "../components/LandingPage/LandingStories";
 import { contentfulClient } from "../config/contentful";
 
 function HomePage({ videoUrl }) {
@@ -21,6 +23,8 @@ function HomePage({ videoUrl }) {
           </Link>
         </div>
       </div>
+      <LandingStories />
+      <Carousel />
     </main>
   );
 }
