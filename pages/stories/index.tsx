@@ -36,10 +36,6 @@ export const getStaticProps = async () => {
   });
   console.log(JSON.stringify(res.items));
 
-  // console.log("res");
-  // console.log(resMovie);
-  // console.log("videourl");
-  // console.log(resMovie.items[0].fields.movie.fields.file.url);
   return {
     props: {
       stories: res.items,
