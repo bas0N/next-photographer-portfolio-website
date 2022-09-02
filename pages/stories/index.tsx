@@ -14,7 +14,7 @@ function StoriesPage({ stories }) {
             <Link href={`/stories/${story.sys.id}`}>
               <div className="relative">
                 <img
-                  className="object-cover w-80 h-80"
+                  className="object-cover w-80 h-80 shadow-2xl"
                   src={story.fields.mainPhoto.fields.file.url}
                 />
                 <div className="hover:bg-gray-900/30   absolute top-0 left-0 w-full h-full">

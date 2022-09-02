@@ -11,7 +11,7 @@ function ContactPage({ contactPhoto }) {
         </div>
         <div className="max-w-[1240px] mx-auto w-full  md:h-screen mt-8">
           <div className=" flex justify-center ">
-            <div className=" hidden md:block w-1/3 shadow-xl">
+            <div className=" hidden md:block w-[40%] shadow-2xl">
               <img src={contactPhoto} />
             </div>
             <div className="flex flex-col justify-between h-[600px] md:h-auto  w-2/3 md:w-1/5 font-extralight bg-gray-100 shadow-xl">

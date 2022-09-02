@@ -35,6 +35,10 @@ export const getStaticProps = async () => {
   const resCarousel: any = await contentfulClient.getEntries({
     content_type: "carouselPhotos",
   });
+  const resLandingPageStories: any = await contentfulClient.getEntries({
+    content_type: "landingPageStories",
+  });
+  console.log(JSON.stringify(resLandingPageStories));
   // console.log("res");
   // console.log(resMovie);
   // console.log("videourl");
