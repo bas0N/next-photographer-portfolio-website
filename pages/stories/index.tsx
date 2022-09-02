@@ -34,7 +34,6 @@ export const getStaticProps = async () => {
   const res: any = await contentfulClient.getEntries({
     content_type: "story",
   });
-  console.log(JSON.stringify(res.items));
 
   return {
     props: {

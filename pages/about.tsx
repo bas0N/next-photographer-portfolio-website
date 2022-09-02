@@ -71,16 +71,13 @@ export const getStaticProps = async () => {
   const resAboutPhoto1: any = await contentfulClient.getEntries({
     content_type: "aboutPhoto1",
   });
-  console.log(
-    JSON.stringify(resAboutPhoto1.items[0].fields.aboutPhoto1.fields.file.url)
-  );
+
   const resAboutPhoto2: any = await contentfulClient.getEntries({
     content_type: "aboutPhoto2",
   });
   const resProfilePhoto: any = await contentfulClient.getEntries({
     content_type: "profilePhoto",
   });
-  console.log(resProfilePhoto.items[0].fields.profilePhoto.fields.file.url);
   return {
     props: {
       aboutPhoto1: resAboutPhoto1.items[0].fields.aboutPhoto1.fields.file.url,
