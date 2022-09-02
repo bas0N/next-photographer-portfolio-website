@@ -1,6 +1,7 @@
 import React from "react";
+import { contentfulClient } from "../config/contentful";
 
-function AboutMePage() {
+function AboutMePage({ aboutPhoto1, aboutPhoto2 }) {
   return (
     <div className="mx-auto w-full mb-8 md:h-screen max-w-[1440px] ">
       <div className="flex flex-col h-full ">
@@ -27,8 +28,8 @@ function AboutMePage() {
             <div className="w-80 h-80 md:mr-8 md:mt-8 self-center my-8 md:my-0 ">
               <div className="bg-black w-80 h-80 z-3 relative  "></div>
               <img
-                className="relative z-4 -translate-y-[19rem] translate-x-[1rem] mb-80"
-                src="https://cms-assets.tutsplus.com/uploads/users/810/profiles/19338/profileImage/profile-square-extra-small.png"
+                className="relative z-4 -translate-y-[19rem] translate-x-[1rem] mb-80 w-80 h-80 object-cover"
+                src={aboutPhoto1}
               />
             </div>
           </div>
@@ -40,7 +41,7 @@ function AboutMePage() {
               <div className="bg-black w-full h-full z-3 relative  "></div>
               <img
                 className="relative w-80 h-full -translate-y-[24rem] translate-x-[1rem] mb-80 object-cover"
-                src="https://static.boredpanda.com/blog/wp-content/uploads/2015/03/dedicated-photographers-12__700.jpg"
+                src={aboutPhoto2}
               />
             </div>
             <div className="flex flex-col  max-w-[800px] ">
@@ -66,5 +67,25 @@ function AboutMePage() {
     </div>
   );
 }
-
+export const getStaticProps = async () => {
+  const resAboutPhoto1: any = await contentfulClient.getEntries({
+    content_type: "aboutPhoto1",
+  });
+  console.log(
+    JSON.stringify(resAboutPhoto1.items[0].fields.aboutPhoto1.fields.file.url)
+  );
+  const resAboutPhoto2: any = await contentfulClient.getEntries({
+    content_type: "aboutPhoto2",
+  });
+  const resProfilePhoto: any = await contentfulClient.getEntries({
+    content_type: "profilePhoto",
+  });
+  console.log(resProfilePhoto.items[0].fields.profilePhoto.fields.file.url);
+  return {
+    props: {
+      aboutPhoto1: resAboutPhoto1.items[0].fields.aboutPhoto1.fields.file.url,
+      aboutPhoto2: resAboutPhoto2.items[0].fields.aboutPhoto2.fields.file.url,
+    },
+  };
+};
 export default AboutMePage;
