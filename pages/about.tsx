@@ -3,7 +3,7 @@ import { contentfulClient } from "../config/contentful";
 
 function AboutMePage({ aboutPhoto1, aboutPhoto2 }) {
   return (
-    <div className="mx-auto w-full mb-8 md:h-screen max-w-[1440px] ">
+    <div className="mx-auto w-full mb-8  max-w-[1440px] ">
       <div className="flex flex-col h-full ">
         <div className="ml-8 ">
           <h1 className="text-7xl md:text-8xl font-extralight">O MNIE</h1>

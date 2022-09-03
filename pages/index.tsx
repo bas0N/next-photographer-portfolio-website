@@ -5,7 +5,7 @@ import Carousel from "../components/LandingPage/Carousel";
 import LandingStories from "../components/LandingPage/LandingStories";
 import { contentfulClient } from "../config/contentful";
 
-function HomePage({ videoUrl, photos }) {
+function HomePage({ videoUrl, photos, mainStory, otherStories }) {
   return (
     <main className="">
       <div className="w-full h-screen relative">
@@ -23,7 +23,7 @@ function HomePage({ videoUrl, photos }) {
           </Link>
         </div>
       </div>
-      <LandingStories />
+      <LandingStories mainStory={mainStory} otherStories={otherStories} />
       <Carousel photos={photos} />
     </main>
   );
@@ -38,7 +38,7 @@ export const getStaticProps = async () => {
   const resLandingPageStories: any = await contentfulClient.getEntries({
     content_type: "landingPageStories",
   });
-  console.log(JSON.stringify(resLandingPageStories));
+  //console.log(JSON.stringify(resLandingPageStories));
   // console.log("res");
   // console.log(resMovie);
   // console.log("videourl");
@@ -47,6 +47,9 @@ export const getStaticProps = async () => {
     props: {
       videoUrl: resMovie.items[0].fields.movie.fields.file.url,
       photos: resCarousel.includes.Asset,
+      mainStory: resLandingPageStories.items[0].fields.landingPageStory[0],
+      otherStories:
+        resLandingPageStories.items[0].fields.landingPageStory.slice(1),
     },
   };
 };
