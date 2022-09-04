@@ -14,7 +14,7 @@ function LandingStories({ mainStory, otherStories }) {
             <Link href={`/stories/${mainStory.sys.id}`}>
               <div className="relative">
                 <img
-                  className="w-full h-full min-h-max object-cover"
+                  className="w-full h-full  object-cover"
                   src={"https:" + mainStory.fields.mainPhoto.fields.file.url}
                 />
                 <div className="hover:bg-gray-900/30 flex  absolute top-0 left-0 w-full h-full">

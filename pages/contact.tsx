@@ -25,7 +25,7 @@ function ContactPage({ contactPhoto }) {
               </div>
               <div className="flex flex-col items-center h-full justify-center">
                 <GoLocation size={50} />
-                <h3 className="text-sm mt-3">PMI</h3>
+                <h3 className="text-sm mt-3">Międzychód</h3>
               </div>
             </div>
           </div>
