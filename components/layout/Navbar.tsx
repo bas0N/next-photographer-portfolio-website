@@ -30,16 +30,16 @@ function Navbar() {
         </div>
         <ul className=" hidden md:flex ">
           <Link href="/">
-            <li>GŁÓWNA</li>
+            <li className="cursor-pointer hover:opacity-70">GŁÓWNA</li>
           </Link>
           <Link href="/stories">
-            <li>HISTORIE</li>
+            <li className="cursor-pointer hover:opacity-70">HISTORIE</li>
           </Link>
           <Link href="/contact">
-            <li>KONTAKT</li>
+            <li className="cursor-pointer hover:opacity-70">KONTAKT</li>
           </Link>
           <Link href="/about">
-            <li>O MNIE</li>
+            <li className="cursor-pointer hover:opacity-70">O MNIE</li>
           </Link>
         </ul>
         <div onClick={handleNav} className="md:hidden ">
