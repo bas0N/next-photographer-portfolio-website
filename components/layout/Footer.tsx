@@ -13,7 +13,10 @@ function Footer() {
             <div className="flex pt-8 pb-4 items-center">
               <img
                 className="rounded-full w-20 h-20 object-cover"
-                src="//images.ctfassets.net/waisjf184iyg/3uhKbSJgqdVXpMSjAGj5iV/d78bb022efba715e7d65ee3505fd450f/34875007_182010959142627_6767702606803369984_n.jpeg"
+                src={
+                  "https:" +
+                  "//images.ctfassets.net/waisjf184iyg/3uhKbSJgqdVXpMSjAGj5iV/d78bb022efba715e7d65ee3505fd450f/34875007_182010959142627_6767702606803369984_n.jpeg"
+                }
               />
               <div className=" flex flex-col px-6">
                 <h3 className="font-bold">Krzysztof Nowak</h3>

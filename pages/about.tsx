@@ -29,7 +29,7 @@ function AboutMePage({ aboutPhoto1, aboutPhoto2 }) {
               <div className="bg-black w-80 h-80 z-3 relative  "></div>
               <img
                 className="relative z-4 -translate-y-[19rem] translate-x-[1rem] mb-80 w-80 h-80 object-cover"
-                src={aboutPhoto1}
+                src={"https:" + aboutPhoto1}
               />
             </div>
           </div>
@@ -41,7 +41,7 @@ function AboutMePage({ aboutPhoto1, aboutPhoto2 }) {
               <div className="bg-black w-full h-full z-3 relative  "></div>
               <img
                 className="relative w-80 h-full -translate-y-[24rem] translate-x-[1rem] mb-80 object-cover"
-                src={aboutPhoto2}
+                src={"https:" + aboutPhoto2}
               />
             </div>
             <div className="flex flex-col  max-w-[800px] ">

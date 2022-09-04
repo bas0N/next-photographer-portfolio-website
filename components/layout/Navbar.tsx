@@ -14,7 +14,6 @@ function Navbar() {
     setShowNav(!showNav);
     setShowLogo(!showLogo);
   };
-  console.log(router.pathname);
   return (
     <nav className=" flex justify-between ">
       <div

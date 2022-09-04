@@ -12,10 +12,10 @@ function StoriesPage({ stories }) {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 my-16 mx-auto">
           {stories.map((story) => (
             <Link href={`/stories/${story.sys.id}`}>
-              <div className="relative">
+              <div className="relative cursor-pointer ">
                 <img
                   className="object-cover w-80 h-80 shadow-2xl"
-                  src={story.fields.mainPhoto.fields.file.url}
+                  src={"https:" + story.fields.mainPhoto.fields.file.url}
                 />
                 <div className="hover:bg-gray-900/30   absolute top-0 left-0 w-full h-full">
                   <p className="left-4 bottom-4 text-2xl font-extralight text-white absolute">

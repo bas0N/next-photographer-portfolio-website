@@ -14,7 +14,6 @@ const sliderData = [
 ];
 function Carousel({ photos }) {
   const [currentSlide, setCurrentSlide] = useState(0);
-  console.log(currentSlide);
   const length = photos.length;
   const prevSlide = () => {
     setCurrentSlide(currentSlide === length - 1 ? 0 : currentSlide + 1);
@@ -36,7 +35,11 @@ function Carousel({ photos }) {
         {photos.map((item, index) => (
           <div className={index === currentSlide ? "opacity-100" : "opacity-0"}>
             {index === currentSlide && (
-              <img className="w-full" src={item.fields.file.url} alt="/" />
+              <img
+                className="w-full"
+                src={"https:" + item.fields.file.url}
+                alt="/"
+              />
             )}
           </div>
         ))}
