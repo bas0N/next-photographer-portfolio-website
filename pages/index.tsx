@@ -44,6 +44,7 @@ export const getStaticProps = async () => {
   // console.log("videourl");
   // console.log(resMovie.items[0].fields.movie.fields.file.url);
   return {
+    revalidate: 60,
     props: {
       videoUrl: resMovie.items[0].fields.movie.fields.file.url,
       photos: resCarousel.includes.Asset,
