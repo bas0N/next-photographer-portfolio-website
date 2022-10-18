@@ -1,6 +1,7 @@
 import React from "react";
 import { contentfulClient } from "../../config/contentful";
 import { useRouter } from "next/router";
+import Masonry from "react-masonry-css";
 
 function SingleStoryPage({ story }) {
   return (
@@ -10,14 +11,18 @@ function SingleStoryPage({ story }) {
         <p className="text-center pt-4">
           {story.fields.description || "description"}
         </p>
-        <div className="grid grid-cols-2 md:grid-cols-3 mx-4 mt-16 mb-8 gap-2">
+        <Masonry
+          breakpointCols={3}
+          className="my-masonry-grid"
+          columnClassName="my-masonry-grid_column"
+        >
           {story.fields.photos.map((photo) => (
             <img
-              className="object-cover"
+              className="object-cover mb-3"
               src={"https:" + photo.fields.file.url}
             />
           ))}
-        </div>
+        </Masonry>
       </div>
     </div>
   );

@@ -19,3 +19,21 @@
     @apply text-xl;
   }
 }
+.my-masonry-grid {
+  display: flex;
+  margin-left: -30px; /* gutter size offset */
+  width: full;
+  margin-top: 30px;
+}
+.my-masonry-grid_column {
+  padding-left: 30px; /* gutter size */
+  gap: 3px;
+  background-clip: padding-box;
+}
+
+/* Style your items */
+.my-masonry-grid_column > div {
+  /* change div to reference your elements you put in <Masonry> */
+  background: grey;
+  margin-y: 30px;
+}
